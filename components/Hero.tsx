@@ -17,8 +17,8 @@ export default function Hero() {
   return (
     <section className="relative gradient-teal overflow-hidden">
       {/* Deko-Blobs */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-skyblue/20 blur-3xl" />
-      <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-amber/20 blur-3xl" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-mint/20 blur-3xl" />
+      <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-honey/20 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-28 grid lg:grid-cols-2 gap-16 items-center">
         {/* Text */}
@@ -30,7 +30,7 @@ export default function Hero() {
             custom={0}
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full glass-dark text-sm font-medium"
           >
-            <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-honey animate-pulse" />
             Dein KI-Coach für die Küche
           </motion.div>
 
@@ -41,9 +41,9 @@ export default function Hero() {
             custom={1}
             className="text-4xl md:text-6xl font-bold leading-tight mb-6"
           >
-            Dein Kochbuch.
+            Liebe zum Kochen
             <br />
-            <span className="text-gradient">Digital. Intelligent.</span>
+            <span className="text-gradient">mit Einfachheit</span>
           </motion.h1>
 
           <motion.p
@@ -53,8 +53,7 @@ export default function Hero() {
             custom={2}
             className="text-lg md:text-xl text-white/85 mb-10 max-w-xl mx-auto lg:mx-0"
           >
-            Fotografiere eine Kochbuchseite – Erni liest das Rezept aus,
-            hilft beim Kochen und plant deine Woche. Ganz ohne Abtippen.
+            Dein digitales Kochbuch vereint Leidenschaft und Struktur. Rezepte scannen, intelligent planen, Zeit sparen – jeden Tag neu.
           </motion.p>
 
           <motion.div
@@ -152,7 +151,7 @@ export default function Hero() {
                   </div>
 
                   {/* Laufende Scanlinie */}
-                  <div className="scanline absolute left-2 right-2 h-[3px] rounded-full bg-amber shadow-glow" />
+                  <div className="scanline absolute left-2 right-2 h-[3px] rounded-full bg-honey shadow-glow" />
                 </div>
 
                 {/* Erkanntes Rezept */}
@@ -174,7 +173,7 @@ export default function Hero() {
 
                 {/* Scan-Button */}
                 <div className="absolute bottom-4 inset-x-0 flex justify-center">
-                  <div className="w-14 h-14 rounded-full bg-amber shadow-glow flex items-center justify-center text-white">
+                  <div className="w-14 h-14 rounded-full bg-honey shadow-glow flex items-center justify-center text-white">
                     <FiCamera size={22} />
                   </div>
                 </div>

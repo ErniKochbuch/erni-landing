@@ -14,15 +14,17 @@ module.exports = {
           50: '#e8f5f0',
           100: '#c9e8dc',
         },
-        skyblue: {
-          DEFAULT: '#85B7EB',
-          dark: '#5d9adf',
-          light: '#aecdf2',
+        mint: {
+          DEFAULT: '#a8e6cf',
+          dark: '#7ed3b5',
+          light: '#c9f0e0',
+          50: '#e8faf3',
         },
-        amber: {
-          DEFAULT: '#EF9F27',
-          dark: '#d68a15',
-          light: '#f5b95e',
+        honey: {
+          DEFAULT: '#f2c94c',
+          dark: '#f0b032',
+          light: '#f5d87a',
+          50: '#fef9f0',
         },
         cream: '#f0f4f3',
       },

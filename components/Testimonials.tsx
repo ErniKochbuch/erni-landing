@@ -5,25 +5,25 @@ import { FaStar } from 'react-icons/fa';
 
 const testimonials = [
   {
-    name: 'Anna K.',
-    role: 'Hobbyköchin & Food-Bloggerin',
+    name: 'Bianca',
+    role: '',
     text: 'Endlich kann ich Omas Kochbücher digitalisieren, ohne stundenlang abzutippen. Foto machen, fertig – Erni macht das so einfach!',
-    initials: 'AK',
+    initials: 'B',
     color: '#1D9E75',
   },
   {
-    name: 'Marcus B.',
-    role: 'Fitness-Trainer',
-    text: 'Der Wochenplaner mit gesunden Varianten ist genau das, was ich für meine Klienten gebraucht habe. Große Empfehlung!',
-    initials: 'MB',
-    color: '#85B7EB',
+    name: 'Jennifer',
+    role: '',
+    text: 'Der Wochenplaner mit gesunden Varianten ist genau das, was ich für meine Familie gebraucht habe. Spart mir jeden Sonntag Stunden!',
+    initials: 'J',
+    color: '#a8e6cf',
   },
   {
-    name: 'Lisa M.',
-    role: 'Berufstätige Mama',
-    text: 'Keine Zeit zum Planen? Erni übernimmt das für mich – und die Einkaufsliste gleich mit. Genialer Lifehack für den Alltag!',
-    initials: 'LM',
-    color: '#EF9F27',
+    name: 'Steffi',
+    role: '',
+    text: 'Liebe zum Kochen trifft Einfachheit: Erni macht es möglich, spontan zu sein und trotzdem strukturiert zu planen. Perfekt!',
+    initials: 'S',
+    color: '#f2c94c',
   },
 ];
 
@@ -38,7 +38,7 @@ export default function Testimonials() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-center mb-16"
         >
-          <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-amber/10 text-amber-dark text-sm font-semibold">
+          <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-honey/10 text-honey-dark text-sm font-semibold">
             Stimmen
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
@@ -70,7 +70,7 @@ export default function Testimonials() {
                     transition={{ delay: idx * 0.15 + i * 0.07 + 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <FaStar size={16} className="text-amber" />
+                    <FaStar size={16} className="text-honey" />
                   </motion.span>
                 ))}
               </div>
@@ -88,7 +88,7 @@ export default function Testimonials() {
                 </span>
                 <div>
                   <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                  <p className="text-xs text-gray-500">{t.role}</p>
+                  {t.role && <p className="text-xs text-gray-500">{t.role}</p>}
                 </div>
               </div>
             </motion.div>

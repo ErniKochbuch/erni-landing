@@ -1,0 +1,25 @@
+# Erni – Mein digitales Kochbuch
+# SEO Robot Instructions
+
+User-agent: *
+Allow: /
+Allow: /features
+Allow: /features/rezepte-scannen
+Allow: /features/wochenplaner
+Allow: /features/ai-coach
+Allow: /features/kochbuch
+Allow: /faq
+Allow: /blog
+Allow: /datenschutz
+Allow: /impressum
+
+Disallow: /.next
+Disallow: /node_modules
+Disallow: /__next
+Disallow: /api
+
+# Sitemap
+Sitemap: https://myerni.de/sitemap.xml
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1

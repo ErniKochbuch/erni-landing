@@ -15,7 +15,7 @@ export default function CTA() {
       >
         {/* Deko */}
         <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-2xl" />
-        <div className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full bg-amber/25 blur-2xl" />
+        <div className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full bg-honey/25 blur-2xl" />
         <motion.span
           animate={{ y: [0, -14, 0], rotate: [0, 6, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}

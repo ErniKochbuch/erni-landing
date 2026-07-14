@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
+import Image from 'next/image';
 
 const links = [
-  { href: '#features', label: 'Features' },
+  { href: '/features', label: 'Features' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog' },
   { href: '#stimmen', label: 'Stimmen' },
-  { href: '#download', label: 'Download' },
 ];
 
 export default function Navigation() {
@@ -33,11 +35,14 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <span
-            className={`w-9 h-9 rounded-xl gradient-teal flex items-center justify-center text-white font-bold text-lg shadow-card group-hover:rotate-6 transition-transform`}
-          >
-            E
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Erni Logo"
+            width={40}
+            height={40}
+            className="h-10 w-auto group-hover:scale-105 transition-transform"
+            priority
+          />
           <span
             className={`text-xl font-bold tracking-tight ${
               scrolled ? 'text-gray-900' : 'text-white'
@@ -53,7 +58,7 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium hover:text-amber transition-colors ${
+              className={`text-sm font-medium hover:text-honey transition-colors ${
                 scrolled ? 'text-gray-700' : 'text-white/90'
               }`}
             >
@@ -62,7 +67,7 @@ export default function Navigation() {
           ))}
           <a
             href="#download"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber text-white text-sm font-semibold hover:bg-amber-dark hover:shadow-glow transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-honey text-white text-sm font-semibold hover:bg-honey-dark hover:shadow-glow transition-all"
           >
             <FiDownload size={16} />
             App laden

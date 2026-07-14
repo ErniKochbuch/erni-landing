@@ -41,7 +41,19 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #f5b95e 0%, #ef9f27 100%);
+  background: linear-gradient(90deg, #f2c94c 0%, #f0b032 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* KI Gradient - Mintgrün to Honiggelb */
+.gradient-ki {
+  background: linear-gradient(135deg, #a8e6cf 0%, #f2c94c 100%);
+}
+
+.gradient-ki-text {
+  background: linear-gradient(135deg, #a8e6cf 0%, #f2c94c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

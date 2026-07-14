@@ -22,7 +22,7 @@ const features: Feature[] = [
     icon: FiCamera,
     title: 'Rezepte scannen',
     description:
-      'Fotografiere eine Seite aus deinem Lieblingskochbuch – Erni liest das Rezept automatisch aus. Kein Abtippen mehr.',
+      'Fotografiere eine Kochbuchseite – Erni erkennt Rezepte im Moment. Keine Schreibarbeit, keine Fehler. Deine Lieblingskochbücher werden digital.',
     color: '#1D9E75',
     bg: 'rgba(29, 158, 117, 0.10)',
   },
@@ -30,23 +30,23 @@ const features: Feature[] = [
     icon: FiMessageSquare,
     title: 'Dein KI-Coach',
     description:
-      'Frag Erni nach Tipps, Zutaten-Alternativen und Varianten – dein persönlicher Coach, immer an deiner Seite.',
-    color: '#85B7EB',
-    bg: 'rgba(133, 183, 235, 0.14)',
+      'Frag Erni spontan: „Wie macht man das Gericht leichter?" Echte Tipps, Alternatives und neue Ideen – immer im Moment, wenn du kochst.',
+    color: '#a8e6cf',
+    bg: 'rgba(168, 230, 207, 0.15)',
   },
   {
     icon: FiCalendar,
     title: 'Wochenplaner',
     description:
-      'Erni plant deine Woche intelligent – abgestimmt auf Saison, Vorlieben und deine Ernährungsziele.',
-    color: '#EF9F27',
-    bg: 'rgba(239, 159, 39, 0.12)',
+      'Keine Planung mehr am Sonntag – Erni kennt Saison, Stress und deine Ziele. Sie plant deine Woche, damit du nur noch genießen musst.',
+    color: '#f2c94c',
+    bg: 'rgba(242, 201, 76, 0.12)',
   },
   {
     icon: FiBook,
     title: 'Dein Kochbuch',
     description:
-      'Sammle alle Rezepte an einem Ort, organisiere sie in Kategorien und teile deine Favoriten mit Freunden.',
+      'Alle deine Rezepte an einem Ort – organisiert, archiviert und bereit. Dein digitales Erbe, perfekt für Familie und Freunde.',
     color: '#1D9E75',
     bg: 'rgba(29, 158, 117, 0.10)',
   },
@@ -83,11 +83,10 @@ export default function Features() {
             Features
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
-            Was macht Erni besonders?
+            Leidenschaft trifft Intelligenz
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Vom Foto zum fertigen Wochenplan – Erni begleitet dich bei jedem
-            Schritt in der Küche.
+            Deine Liebe zum Kochen verdient keine Planung-Stress. Erni kennt die Lösungen.
           </p>
         </motion.div>
 
