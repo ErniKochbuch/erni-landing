@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #1d9e75;
+  color: #fff;
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Gradients ---------- */
+.gradient-teal {
+  background: linear-gradient(140deg, #1d9e75 0%, #157a5a 55%, #10614a 100%);
+}
+
+.gradient-cta {
+  background: linear-gradient(120deg, #1d9e75 0%, #2cbf90 45%, #85b7eb 120%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #f5b95e 0%, #ef9f27 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Scan animation (Hero phone mockup) ---------- */
+@keyframes scanline {
+  0% {
+    top: 8%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 88%;
+    opacity: 0;
+  }
+}
+
+.scanline {
+  animation: scanline 3.2s ease-in-out infinite;
+}
+
+@keyframes recipeAppear {
+  0%,
+  55% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  75%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.recipe-line {
+  animation: recipeAppear 3.2s ease-in-out infinite;
+}
+
+/* ---------- Misc ---------- */
+.section-padding {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .scanline,
+  .recipe-line {
+    animation: none;
+  }
+}
