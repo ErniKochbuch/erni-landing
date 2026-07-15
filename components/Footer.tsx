@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -7,16 +11,26 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-9 h-9 rounded-xl gradient-teal flex items-center justify-center text-white font-bold text-lg">
-                E
-              </span>
-              <span className="text-xl font-bold text-white">Erni</span>
-            </div>
-            <p className="text-sm leading-relaxed max-w-sm">
+            <Image
+              src="/logo-white.png"
+              alt="my.erni – Mein digitales Kochbuch"
+              width={130}
+              height={54}
+              className="h-9 w-auto mb-4"
+            />
+            <p className="text-sm leading-relaxed max-w-sm mb-5">
               Dein digitales Kochbuch mit KI-Coach. Rezepte scannen, Woche
               planen, besser kochen – auf iOS und Android.
             </p>
+            <a
+              href="https://www.instagram.com/my.erni/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Erni auf Instagram"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+            >
+              <FaInstagram size={18} />
+            </a>
           </div>
 
           {/* Links */}
@@ -28,11 +42,6 @@ export default function Footer() {
               <li>
                 <a href="#features" className="hover:text-white transition-colors">
                   Features
-                </a>
-              </li>
-              <li>
-                <a href="#stimmen" className="hover:text-white transition-colors">
-                  Stimmen
                 </a>
               </li>
               <li>
@@ -60,12 +69,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:hallo@myerni.de"
+                <ObfuscatedEmail
+                  subject="Erni-Anfrage"
+                  label="Kontakt"
                   className="hover:text-white transition-colors"
-                >
-                  Kontakt
-                </a>
+                />
               </li>
             </ul>
           </div>

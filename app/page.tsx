@@ -1,9 +1,7 @@
-import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -43,25 +41,14 @@ export default function Home() {
           url: 'https://myerni.de',
           logo: 'https://myerni.de/logo.png',
           description: 'Digitales Kochbuch mit KI-Coach',
-          sameAs: [
-            'https://instagram.com/erni.digital',
-            'https://twitter.com/erni_digital',
-          ],
-          contactPoint: {
-            '@type': 'ContactPoint',
-            telephone: '+49-XXX-XXXXXXX',
-            contactType: 'Support',
-            email: 'hallo@myerni.de',
-          },
+          sameAs: ['https://www.instagram.com/my.erni/'],
         })}
       </script>
 
-      <Navigation />
       <Hero />
       <Features />
       <Testimonials />
       <CTA />
-      <Footer />
     </main>
   );
 }

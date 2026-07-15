@@ -9,7 +9,6 @@ const links = [
   { href: '/features', label: 'Features' },
   { href: '/faq', label: 'FAQ' },
   { href: '/blog', label: 'Blog' },
-  { href: '#stimmen', label: 'Stimmen' },
 ];
 
 export default function Navigation() {
@@ -28,28 +27,21 @@ export default function Navigation() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass shadow-soft py-3' : 'bg-transparent py-5'
+      className={`fixed top-0 inset-x-0 z-50 glass shadow-soft transition-all duration-300 ${
+        scrolled ? 'py-3' : 'py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center group">
           <Image
             src="/logo.png"
-            alt="Erni Logo"
-            width={40}
+            alt="my.erni – Mein digitales Kochbuch"
+            width={130}
             height={40}
-            className="h-10 w-auto group-hover:scale-105 transition-transform"
+            className="h-9 w-auto group-hover:scale-105 transition-transform"
             priority
           />
-          <span
-            className={`text-xl font-bold tracking-tight ${
-              scrolled ? 'text-gray-900' : 'text-white'
-            } transition-colors`}
-          >
-            Erni
-          </span>
         </a>
 
         {/* Desktop links */}
@@ -58,16 +50,14 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium hover:text-honey transition-colors ${
-                scrolled ? 'text-gray-700' : 'text-white/90'
-              }`}
+              className="text-sm font-medium text-gray-700 hover:text-teal transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#download"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-honey text-white text-sm font-semibold hover:bg-honey-dark hover:shadow-glow transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-teal via-teal-light to-honey text-white text-sm font-semibold hover:shadow-glow hover:brightness-105 transition-all"
           >
             <FiDownload size={16} />
             App laden
@@ -78,9 +68,7 @@ export default function Navigation() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Menü öffnen"
-          className={`md:hidden p-2 rounded-lg ${
-            scrolled ? 'text-gray-900' : 'text-white'
-          }`}
+          className="md:hidden p-2 rounded-lg text-gray-900"
         >
           {open ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>

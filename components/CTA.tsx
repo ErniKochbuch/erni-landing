@@ -16,22 +16,6 @@ export default function CTA() {
         {/* Deko */}
         <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-2xl" />
         <div className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full bg-honey/25 blur-2xl" />
-        <motion.span
-          animate={{ y: [0, -14, 0], rotate: [0, 6, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-8 left-10 text-4xl hidden md:block"
-          aria-hidden="true"
-        >
-          🍋
-        </motion.span>
-        <motion.span
-          animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-10 right-12 text-4xl hidden md:block"
-          aria-hidden="true"
-        >
-          🥕
-        </motion.span>
 
         <div className="relative">
           <h2 className="text-3xl md:text-5xl font-bold mb-5 leading-tight">

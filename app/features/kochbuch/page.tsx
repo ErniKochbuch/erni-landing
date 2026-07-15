@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiBook, FiArrowLeft } from 'react-icons/fi';
+import { FiBook, FiArrowLeft, FiCheck } from 'react-icons/fi';
 import Link from 'next/link';
+import Image from 'next/image';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export default function KochbuchPage() {
   return (
@@ -40,10 +42,44 @@ export default function KochbuchPage() {
             <p className="text-xl text-gray-600 mb-8">
               Alle Rezepte an einem Ort – organisiert, durchsuchbar, teilbar. Dein digitales Erbe für immer.
             </p>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-card aspect-[16/11]">
+              <Image
+                src="/lifestyle/kochbuch.jpg"
+                alt="Rezeptansicht im digitalen Kochbuch von Erni auf dem Smartphone"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Content Sections */}
           <div className="space-y-12">
+            {/* Warum / Vorteile */}
+            <section>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+                Warum ein digitales Kochbuch?
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  'Alle Rezepte an einem Ort – gescannt, aus dem Web oder selbst notiert',
+                  'Nie wieder ein Rezept verlieren',
+                  'Familienrezepte bewahren und weitergeben',
+                  'Jedes Gericht in Sekunden über die Suche finden',
+                  'Deine Sammlung immer dabei, auf jedem Gerät',
+                ].map((benefit, idx) => (
+                  <div key={idx} className="flex items-start gap-3 bg-cream rounded-2xl p-5">
+                    <span className="w-7 h-7 rounded-full bg-teal/10 text-teal flex items-center justify-center shrink-0 mt-0.5">
+                      <FiCheck size={15} />
+                    </span>
+                    <p className="text-gray-700">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* Problem & Solution */}
             <section className="grid sm:grid-cols-2 gap-8">
               <div className="bg-honey/10 rounded-3xl p-8">
@@ -86,7 +122,7 @@ export default function KochbuchPage() {
               <h2 className="text-2xl font-bold mb-6 text-gray-900">Die Funktionen deines Kochbuchs</h2>
               <div className="space-y-4">
                 {[
-                  { title: 'Unbegrenzte Rezepte', desc: 'Sammle so viele Rezepte, wie du möchtest – keine Limits' },
+                  { title: 'Deine ganze Sammlung', desc: 'Alle Rezepte gebündelt an einem Ort' },
                   { title: 'Intelligente Tags', desc: 'Kategorisiere nach Zutat, Kochdauer, Schwierigkeit oder Saison' },
                   { title: 'Volltext-Suche', desc: 'Finde jedes Rezept in Sekunden mit der intelligenten Suche' },
                   { title: 'Fotoverwaltung', desc: 'Speichere Fotos deiner Gerichte und des gekochten Ergebnisses' },
@@ -109,7 +145,7 @@ export default function KochbuchPage() {
                   { title: 'Nach Kategorien', items: ['Vorspeisen', 'Hauptgänge', 'Desserts', 'Getränke'] },
                   { title: 'Nach Zutat', items: ['Fisch', 'Fleisch', 'Vegan', 'Glutenfrei'] },
                   { title: 'Nach Zeit', items: ['<15 min', '15-30 min', '30-60 min', '>1h'] },
-                  { title: 'Nach Quelle', items: ['Omas Rezepte', 'Blog XYZ', 'Kochbuch ABC', 'Selbsterfunden'] },
+                  { title: 'Nach Quelle', items: ['Omas Rezepte', 'Aus dem Web', 'Kochbuch', 'Selbst erfunden'] },
                 ].map((org, idx) => (
                   <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-200">
                     <h3 className="font-semibold text-gray-900 mb-4">{org.title}</h3>
@@ -155,9 +191,7 @@ export default function KochbuchPage() {
                 <a href="https://apps.apple.com" target="_blank" rel="noopener" className="px-8 py-4 bg-white text-teal font-semibold rounded-2xl hover:shadow-lg transition-shadow">
                   App Store
                 </a>
-                <a href="https://play.google.com" target="_blank" rel="noopener" className="px-8 py-4 bg-white/20 text-white font-semibold rounded-2xl hover:bg-white/30 transition-colors">
-                  Google Play
-                </a>
+                <ObfuscatedEmail subject="Android-Warteliste" label="Bald für Android" className="px-8 py-4 bg-white/20 text-white font-semibold rounded-2xl hover:bg-white/30 transition-colors cursor-pointer" />
               </div>
             </div>
           </div>

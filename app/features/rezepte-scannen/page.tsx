@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiCamera, FiArrowLeft } from 'react-icons/fi';
+import { FiCamera, FiArrowLeft, FiCheck } from 'react-icons/fi';
 import Link from 'next/link';
+import Image from 'next/image';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export default function RezepteScannenPage() {
   return (
@@ -55,12 +57,46 @@ export default function RezepteScannenPage() {
             </div>
 
             <p className="text-xl text-gray-600 mb-8">
-              Deine Lieblingskochbücher in Sekunden digitalisieren – ohne Abtippen, ohne Fehler.
+              Deine Lieblingskochbücher digitalisieren – einfach abfotografieren statt abtippen.
             </p>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-card aspect-[16/11]">
+              <Image
+                src="/lifestyle/scannen.jpg"
+                alt="Erni App beim Scannen einer Kochbuchseite auf dem Smartphone"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Content Sections */}
           <div className="space-y-12">
+            {/* Warum / Vorteile */}
+            <section>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+                Warum Rezepte einscannen?
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  'Alle Lieblingsrezepte an einem Ort – nie wieder danach suchen',
+                  'Nie vergessen, welche Rezepte in deinen Büchern stecken',
+                  'Familienrezepte für die Ewigkeit bewahren',
+                  'Schluss mit Abtippen und losen Zetteln',
+                  'Deine Rezepte immer dabei – auch beim Einkaufen',
+                ].map((benefit, idx) => (
+                  <div key={idx} className="flex items-start gap-3 bg-cream rounded-2xl p-5">
+                    <span className="w-7 h-7 rounded-full bg-teal/10 text-teal flex items-center justify-center shrink-0 mt-0.5">
+                      <FiCheck size={15} />
+                    </span>
+                    <p className="text-gray-700">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* How it works */}
             <section className="bg-cream rounded-3xl p-8">
               <h2 className="text-2xl font-bold mb-6 text-gray-900">Wie funktioniert es?</h2>
@@ -83,7 +119,7 @@ export default function RezepteScannenPage() {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center font-bold">3</div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">KI erkennt das Rezept</h3>
-                    <p className="text-gray-600">Erni liest Zutaten, Anleitung und Nährwerte aus</p>
+                    <p className="text-gray-600">Erni liest Zutaten und Zubereitung aus</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -101,14 +137,14 @@ export default function RezepteScannenPage() {
               <h2 className="text-2xl font-bold mb-6 text-gray-900">Was macht unser Scan besonders?</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { title: 'KI-Erkennung', desc: 'Versteht Rezepte in 10+ Sprachen' },
-                  { title: 'Keine Fehler', desc: 'Automatische Qualitätsprüfung' },
-                  { title: 'Schnell', desc: 'Rezept in unter 2 Sekunden erkannt' },
-                  { title: 'Flexibel', desc: 'Arbeitet mit alten & neuen Kochbüchern' },
-                  { title: 'Bearbeitbar', desc: 'Jedes Rezept kann nachbearbeitet werden' },
-                  { title: 'Offline', desc: 'Funktioniert auch ohne Internetverbindung' },
+                  { title: 'KI-Erkennung', desc: 'Liest gedruckte Rezepte zuverlässig aus' },
+                  { title: 'Mehrere Quellen', desc: 'Foto, Galerie oder Link aus dem Web' },
+                  { title: 'In Sekunden', desc: 'Erkennung dauert etwa 10–15 Sekunden' },
+                  { title: 'Flexibel', desc: 'Für alte und neue Kochbücher' },
+                  { title: 'Bearbeitbar', desc: 'Erkanntes lässt sich jederzeit anpassen' },
+                  { title: 'Strukturiert', desc: 'Zutaten und Schritte sauber getrennt' },
                 ].map((feature, idx) => (
-                  <div key={idx} className="bg-gradient-to-br from-teal/10 to-blue/10 rounded-2xl p-6">
+                  <div key={idx} className="bg-teal-50 rounded-2xl p-6">
                     <h3 className="font-semibold text-gray-900 mb-2">{feature.title}</h3>
                     <p className="text-sm text-gray-600">{feature.desc}</p>
                   </div>
@@ -143,9 +179,7 @@ export default function RezepteScannenPage() {
                 <a href="https://apps.apple.com" target="_blank" rel="noopener" className="px-8 py-4 bg-white text-teal font-semibold rounded-2xl hover:shadow-lg transition-shadow">
                   App Store
                 </a>
-                <a href="https://play.google.com" target="_blank" rel="noopener" className="px-8 py-4 bg-white/20 text-white font-semibold rounded-2xl hover:bg-white/30 transition-colors">
-                  Google Play
-                </a>
+                <ObfuscatedEmail subject="Android-Warteliste" label="Bald für Android" className="px-8 py-4 bg-white/20 text-white font-semibold rounded-2xl hover:bg-white/30 transition-colors cursor-pointer" />
               </div>
             </div>
           </div>

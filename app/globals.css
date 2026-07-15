@@ -37,7 +37,7 @@ body {
 }
 
 .gradient-cta {
-  background: linear-gradient(120deg, #1d9e75 0%, #2cbf90 45%, #85b7eb 120%);
+  background: linear-gradient(120deg, #1d9e75 0%, #2cbf90 55%, #f2c94c 120%);
 }
 
 .text-gradient {
@@ -101,6 +101,43 @@ body {
   animation: recipeAppear 3.2s ease-in-out infinite;
 }
 
+/* ---------- Hero: heller Hintergrund ---------- */
+.gradient-hero-light {
+  background: linear-gradient(135deg, #f7faf9 0%, #eaf5f0 100%);
+}
+
+/* ---------- Hero scan sequence (Menü -> Kamera -> erkannt) ---------- */
+@keyframes heroMenu {
+  0%, 26% { opacity: 1; }
+  33%, 86% { opacity: 0; }
+  93%, 100% { opacity: 1; }
+}
+@keyframes heroCam {
+  0%, 26% { opacity: 0; }
+  33%, 86% { opacity: 1; }
+  93%, 100% { opacity: 0; }
+}
+@keyframes heroPress {
+  0%, 18% { transform: scale(1); }
+  24% { transform: scale(0.95); }
+  30%, 100% { transform: scale(1); }
+}
+@keyframes heroScan {
+  0%, 33% { top: 8%; }
+  60% { top: 74%; }
+  86%, 100% { top: 8%; }
+}
+@keyframes heroToast {
+  0%, 58% { opacity: 0; transform: translateY(6px); }
+  66%, 86% { opacity: 1; transform: translateY(0); }
+  92%, 100% { opacity: 0; }
+}
+.hero-menu { animation: heroMenu 8s ease-in-out infinite; }
+.hero-cam { animation: heroCam 8s ease-in-out infinite; }
+.hero-press { animation: heroPress 8s ease-in-out infinite; }
+.hero-scan { animation: heroScan 8s ease-in-out infinite; }
+.hero-toast { animation: heroToast 8s ease-in-out infinite; }
+
 /* ---------- Misc ---------- */
 .section-padding {
   padding-left: 1.5rem;
@@ -112,7 +149,13 @@ body {
     scroll-behavior: auto;
   }
   .scanline,
-  .recipe-line {
+  .recipe-line,
+  .hero-menu,
+  .hero-cam,
+  .hero-press,
+  .hero-scan,
+  .hero-toast {
     animation: none;
   }
+  .hero-cam { opacity: 0; }
 }

@@ -10,10 +10,10 @@ const features = [
     icon: FiCamera,
     description: 'Fotografiere eine Kochbuchseite – Erni erkennt das Rezept mit KI. Keine Fehler, keine Schreibarbeit.',
     details: [
-      'Optische Zeichenerkennung (OCR) mit KI',
+      'Rezept-Erkennung per KI',
       'Automatische Zutatenerkennung',
-      'Zubereitung & Nährwerte erfasst',
-      'Unterstützt Deutsch, Englisch & mehr',
+      'Zutaten und Zubereitung erfasst',
+      'Ergebnis jederzeit anpassbar',
     ],
     href: '/features/rezepte-scannen',
     color: '#1D9E75',
@@ -24,12 +24,12 @@ const features = [
     description: 'Frag Erni spontan: „Wie macht man das leichter?" Echtzeittipps & Varianten.',
     details: [
       'Personalisierte Kochratschläge',
-      'Zutaten-Alternativen Vorschläge',
+      'Zutaten-Alternativen als Vorschlag',
       'Gesunde Rezept-Varianten',
-      '24/7 verfügbar, keine Wartezeiten',
+      'Jederzeit im Chat verfügbar',
     ],
     href: '/features/ai-coach',
-    color: '#a8e6cf',
+    color: '#1D9E75',
   },
   {
     title: 'Intelligenter Wochenplaner',
@@ -49,7 +49,7 @@ const features = [
     icon: FiBook,
     description: 'Alle Rezepte an einem Ort – organisiert, durchsuchbar, teilbar.',
     details: [
-      'Unbegrenzte Rezept-Sammlung',
+      'Deine ganze Sammlung an einem Ort',
       'Intelligente Kategorisierung',
       'Volltext-Suche über alle Rezepte',
       'Teilen mit Familie & Freunden',

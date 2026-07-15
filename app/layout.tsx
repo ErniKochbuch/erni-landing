@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '@fontsource-variable/inter';
 import './globals.css';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://myerni.de'),
@@ -49,7 +51,9 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className="font-inter bg-cream text-gray-900 antialiased">
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

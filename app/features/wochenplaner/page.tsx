@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiCalendar, FiArrowLeft } from 'react-icons/fi';
+import { FiCalendar, FiArrowLeft, FiCheck } from 'react-icons/fi';
 import Link from 'next/link';
+import Image from 'next/image';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export default function WochenplanerPage() {
   return (
@@ -40,17 +42,51 @@ export default function WochenplanerPage() {
             <p className="text-xl text-gray-600 mb-8">
               Keine Zeit am Sonntag für Planung? Erni übernimmt das – intelligent, saisonal, personalisiert.
             </p>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-card aspect-[16/11]">
+              <Image
+                src="/lifestyle/wochenplaner.jpg"
+                alt="Erni Wochenplan auf dem Smartphone auf einem Schreibtisch"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Content Sections */}
           <div className="space-y-12">
+            {/* Warum / Vorteile */}
+            <section>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+                Warum die Woche planen?
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  'Nie wieder „Was koche ich heute?"',
+                  'Weniger Stress unter der Woche',
+                  'Gezielter einkaufen, weniger wegwerfen, Geld sparen',
+                  'Ausgewogener und abwechslungsreicher essen',
+                  'Mehr Zeit für die schönen Dinge statt fürs Grübeln',
+                ].map((benefit, idx) => (
+                  <div key={idx} className="flex items-start gap-3 bg-cream rounded-2xl p-5">
+                    <span className="w-7 h-7 rounded-full bg-honey/20 text-honey-dark flex items-center justify-center shrink-0 mt-0.5">
+                      <FiCheck size={15} />
+                    </span>
+                    <p className="text-gray-700">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             {/* Problem */}
             <section className="bg-cream rounded-3xl p-8">
               <h2 className="text-2xl font-bold mb-4 text-gray-900">Das Problem mit manueller Planung</h2>
               <ul className="space-y-3">
                 {[
                   'Jede Woche die gleiche Frage: „Was koche ich denn heute?"',
-                  'Einkaufslisten schreiben kostet 1-2 Stunden',
+                  'Einkaufslisten schreiben kostet viel Zeit',
                   'Rezepte passen nicht zur aktuellen Jahreszeit',
                   'Familienvorlieben & Allergien vergessen',
                   'Stress-Kocherei statt genussvolles Planen',
@@ -93,7 +129,7 @@ export default function WochenplanerPage() {
               <h2 className="text-2xl font-bold mb-6 text-gray-900">Deine Vorteile</h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { icon: '⏱️', title: 'Zeit sparen', desc: '2 Stunden pro Woche weniger Planungszeit' },
+                  { icon: '⏱️', title: 'Zeit sparen', desc: 'Spürbar weniger Planungsaufwand pro Woche' },
                   { icon: '💡', title: 'Weniger Stress', desc: 'Keine „Was koche ich denn heute?" mehr' },
                   { icon: '🌱', title: 'Saisonal essen', desc: 'Automatisch regional & nachhaltig' },
                   { icon: '💰', title: 'Geld sparen', desc: 'Weniger Verschwendung durch bessere Planung' },
@@ -143,9 +179,7 @@ export default function WochenplanerPage() {
                 <a href="https://apps.apple.com" target="_blank" rel="noopener" className="px-8 py-4 bg-white text-honey font-semibold rounded-2xl hover:shadow-lg transition-shadow">
                   App Store
                 </a>
-                <a href="https://play.google.com" target="_blank" rel="noopener" className="px-8 py-4 bg-white/20 text-white font-semibold rounded-2xl hover:bg-white/30 transition-colors">
-                  Google Play
-                </a>
+                <ObfuscatedEmail subject="Android-Warteliste" label="Bald für Android" className="px-8 py-4 bg-white/20 text-white font-semibold rounded-2xl hover:bg-white/30 transition-colors cursor-pointer" />
               </div>
             </div>
           </div>

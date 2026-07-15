@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiArrowLeft } from 'react-icons/fi';
 import Link from 'next/link';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 const faqs = [
   {
@@ -11,15 +12,15 @@ const faqs = [
     questions: [
       {
         q: 'Was kostet Erni?',
-        a: 'Erni ist kostenlos herunterzuladen und zu nutzen. Es gibt eine optionale Premium-Version mit erweiterten Features.',
+        a: 'Die Grundfunktionen sind kostenlos. KI-Funktionen wie das Scannen von Rezepten werden künftig über ein Abo angeboten. Aktuell läuft eine Testphase – du kannst alle Funktionen mit gewissen Limits kostenlos ausprobieren.',
       },
       {
         q: 'Welche Geräte werden unterstützt?',
-        a: 'Erni läuft auf iOS (iPhone/iPad) ab Version 14 und Android ab Version 8. Du brauchst nur ein Smartphone – fertig!',
+        a: 'Erni gibt es aktuell für das iPhone im App Store. Eine Android-Version für den Google Play Store ist in Arbeit – schreib uns einfach eine E-Mail (Adresse im Impressum, Betreff „Android-Warteliste"), dann melden wir uns, sobald es losgeht.',
       },
       {
         q: 'Sind meine Rezepte sicher?',
-        a: 'Ja! Alle Rezepte werden verschlüsselt auf deinen Geräten gespeichert. Nur du hast Zugriff auf dein Kochbuch.',
+        a: 'Ja. Deine Rezepte gehören dir – sie werden sicher gespeichert und nur du hast Zugriff auf dein Kochbuch.',
       },
     ],
   },
@@ -27,16 +28,16 @@ const faqs = [
     category: 'Rezepte scannen',
     questions: [
       {
-        q: 'Wie genau ist die Scan-Erkennung?',
-        a: 'Unsere KI erkennt 95%+ der Rezepte korrekt. Kleine Fehler kannst du schnell manuell korrigieren.',
+        q: 'Wie funktioniert das Scannen?',
+        a: 'Du fotografierst eine Rezeptseite, und Erni liest Titel, Zutaten und Zubereitung aus und legt alles strukturiert in deinem Kochbuch ab. Kleine Fehler kannst du jederzeit von Hand korrigieren.',
       },
       {
-        q: 'Funktioniert es mit alten Kochbüchern?',
-        a: 'Ja! Erni funktioniert mit modernen und klassischen Kochbüchern – solange das Foto klare Lesbarkeit hat.',
+        q: 'Warum wird ein Rezept manchmal nicht richtig erkannt?',
+        a: 'Am besten klappt es mit klar gedrucktem Text und einem scharfen Foto bei gutem Licht. Schwieriger wird es bei Schatten, unscharfen Aufnahmen, sehr verschnörkelten Schriften, handgeschriebenen Rezepten oder ungewöhnlichen Layouts. In solchen Fällen hilft ein zweites Foto – oder du ergänzt die Angaben schnell manuell.',
       },
       {
-        q: 'Kann ich handgeschriebene Rezepte scannen?',
-        a: 'Handgeschriebene Rezepte sind schwieriger zu erkennen. Am besten funktioniert es mit gedrucktem Text.',
+        q: 'Funktioniert es auch mit alten Kochbüchern?',
+        a: 'Ja, solange der Text auf dem Foto gut lesbar ist, funktioniert Erni mit modernen wie klassischen Kochbüchern.',
       },
     ],
   },
@@ -45,11 +46,11 @@ const faqs = [
     questions: [
       {
         q: 'Kann der KI-Coach meine Ernährung berücksichtigen?',
-        a: 'Ja! Du kannst deine Ziele, Allergien und Vorlieben in den Einstellungen speichern. Erni berücksichtigt das automatisch.',
+        a: 'Ja. Du kannst deine Ziele, Allergien und Vorlieben hinterlegen – Erni berücksichtigt das bei seinen Vorschlägen automatisch.',
       },
       {
-        q: 'Arbeitet Erni mit echten Ernährungswissenschaftlern?',
-        a: 'Ja! Unsere Ratschläge basieren auf wissenschaftlichen Studien und nutzen die Claude-KI von Anthropic.',
+        q: 'Wird Erni von Fachleuten unterstützt?',
+        a: 'Ja. Erni wird von Ernährungswissenschaftlern und leidenschaftlichen Hobbyköchen begleitet, damit die Tipps fundiert und zugleich alltagstauglich sind.',
       },
     ],
   },
@@ -57,16 +58,16 @@ const faqs = [
     category: 'Wochenplaner',
     questions: [
       {
-        q: 'Wie arbeitet der automatische Wochenplaner?',
-        a: 'Erni berücksichtigt: Saison, deine Allergien, verfügbare Zeit, Anzahl Personen und Ernährungsziele.',
+        q: 'Wie funktioniert der automatische Wochenplaner?',
+        a: 'Erni stellt deine Woche zusammen und berücksichtigt dabei Saison, deine Vorlieben und Allergien, die verfügbare Zeit sowie die Anzahl der Personen.',
       },
       {
         q: 'Kann ich den Plan manuell ändern?',
-        a: 'Ja! Der Plan ist nur ein Vorschlag. Du kannst Rezepte beliebig tauschen und anpassen.',
+        a: 'Klar. Der Plan ist nur ein Vorschlag – du kannst Rezepte beliebig tauschen, verschieben und anpassen.',
       },
       {
         q: 'Wird eine Einkaufsliste automatisch erstellt?',
-        a: 'Ja! Erni generiert eine intelligente Einkaufsliste und sortiert sie sogar nach Läden-Layout.',
+        a: 'Ja. Aus deinem Wochenplan erstellt Erni automatisch eine Einkaufsliste, sortiert nach Kategorien und über alle Rezepte zusammengefasst. Teilen per WhatsApp inklusive.',
       },
     ],
   },
@@ -183,12 +184,11 @@ export default function FAQPage() {
             <p className="mb-6 text-lg opacity-90">
               Schreib uns eine Email – wir helfen gerne weiter!
             </p>
-            <a
-              href="mailto:hallo@myerni.de"
-              className="inline-block px-8 py-4 bg-white text-teal font-semibold rounded-2xl hover:shadow-lg transition-shadow"
-            >
-              Email schreiben
-            </a>
+            <ObfuscatedEmail
+              subject="Erni-Anfrage"
+              label="E-Mail schreiben"
+              className="inline-block px-8 py-4 bg-white text-teal font-semibold rounded-2xl hover:shadow-lg transition-shadow cursor-pointer"
+            />
           </motion.div>
         </div>
       </div>
